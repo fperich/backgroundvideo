@@ -14,7 +14,6 @@
 			var button = document.getElementById('button');
 			var overlay = document.getElementById('overlay');
 			var greyscale = document.getElementById('greyscale');
-			var lowres = document.getElementById('lowres');
 			
 			button.onclick = function(){
 				if(overlay.getAttribute('data') === 'red'){
@@ -37,19 +36,7 @@
 					video.classList.add('grey')					
 				}
 			}
-
-			lowres.onclick = function(){
-				if(video.getAttribute('data') === 'hires'){
-					video.src = 'vg_homepage_v1_lowres.mp4';
-					video.setAttribute('data', 'lowres');
-					lowres.innerHTML = 'Hi res';
-				} else {
-					video.src = 'vg_homepage_v1.mp4';
-					video.setAttribute('data', 'hires');
-					lowres.innerHTML = 'Low res';
-					
-				}
-			}
+			
 
 		}
 	</script>
@@ -69,12 +56,11 @@
 
 	<button id="button">Toggle Color</button>
 	<button id="greyscale">Toggle Greyscale</button>
-	<button id="lowres">Toggle to Hi res video</button>
 
 	<div class="video-container">
 		<div id="overlay" data="red"></div>
 
-		<video id="video" autoplay loop="true" width="1280" height="720" data="lowres">
+		<video id="video" autoplay loop="true" width="1280" height="720">
 			<!-- <source type="video/mp4" src="vg_homepage_v1_lowres.mp4"> -->
 			<source type="video/mp4" src="video.mp4">
 			</video>
